@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SithWeb</title>
+    <base href="http://rise.ovh/">
+	<meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	
+	<style>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	</style>
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script type="text/javascript" src="js/xml2json.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	
+	
+	<link rel="stylesheet" href="css/style.css" >
+	<link rel="stylesheet" href="fonts/stylesheet.css" >
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+</head>
+	
+<body ng-app="App" ng-controller="MainCtrl">
+    <nav>
+	    <ul>
+            <li ng-repeat="item in itemList | filter:itemListFilter | itemListFilter2:itemListDayFilter:itemListNightFilter:1" ng-class="{locked: item.locked, day: item.id%2}" class="miniature_{{item.type}}"><a href="{{ item.locked ? '' : item.type+'/'+item.name|toURLableFilter }}">{{item.name}}</a><span>{{item.locked ? 'Pas encore débloqué' : ''}}</span></li>
+	    </ul>
+       
+       <!-- <input type="checkbox" ng-model="showFilters" id="showFilters" > <label for="showFilters">Montrer les filtres</label>-->
+       <div class="filters"> <!--  ng-show="showFilters" -->
+            <input type="checkbox" ng-init="itemListDayFilter=true" ng-model="itemListDayFilter" id="day"> <label for="day">Jour</label>
+            <input type="checkbox" ng-init="itemListNightFilter=true" ng-model="itemListNightFilter" id="night"> <label for="night">Nuit</label> | <input type="checkbox" ng-init="itemListFilters['character']=true" ng-model="itemListFilters['character']" id="characters"> <label for="characters">Personnages</label>
+            <input type="checkbox" ng-init="itemListFilters['planet']=true" ng-model="itemListFilters['planet']" id="planets"> <label for="planets">Planètes</label>
+            <input type="checkbox" ng-init="itemListFilters['weapon']=true" ng-model="itemListFilters['weapon']" id="weapons"> <label for="weapons">Armes</label>
+            <input type="checkbox" ng-init="itemListFilters['special']=true" ng-model="itemListFilters['special']" id="special"> <label for="special">Spécial</label>
+        </div>
+    
+	</nav>
+      <div id="vote" ng-show="showVotes">
+          <a href="" id="vote_left" ng-click="voteLeft()"><span>Votez pour Dark Maul !</span></a>
+          <a href="" id="vote_right" ng-click="voteRight()"><span>Votez pour Yoda !</span></a>
+          
+      </div>
+  
+    <div id="show" ng-view autoscroll="true" class="character">
+    </div>
+   
+   
+	
+    
+	<script type="text/javascript" src="js/scrollReveal.min.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    
+
+</body>
+</html>

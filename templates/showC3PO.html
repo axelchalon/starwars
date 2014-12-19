@@ -1,0 +1,39 @@
+<div class="c3po-header"></div><div class="container">	
+    <div class="blocleft" data-sr="reset wait 0.5s then enter top and left">
+        <p> Quand C3PO est là pour vous parler ! </p>
+        <span> L'utilisation est très simple , insérez le texte que vous voulez faire dire à C3PO, ce dernier s'occupera du reste ! 
+        </span>
+    </div>
+    
+    <div class="blocright" data-sr="reset wait 0.5s then enter top and right">
+        <input type="text" id="c3audio" /><br/>
+        <button id="c3audio_submit">Dire</button>
+    </div>
+    
+    
+    <script>
+    document.getElementById('c3audio_submit').onclick = function() {
+
+
+    var text = 'Bonjour je suis C3PO';
+    var encoded_text = encodeURIComponent(text);
+    var da = 6;
+    var audios = [];
+    for (var i = 0; i<da; i++)
+    audios.push(new Audio('audio.php?q='+encodeURIComponent(document.getElementById('c3audio').value)));
+
+    var closurer = function(closured)
+        {
+            return function(){ audios[closured].volume = 0.85; audios[closured].play(); }
+        }
+
+    for (var i = 0; i<da; i++)
+    {
+        setTimeout(closurer(i),i*30);
+
+    }
+    // @todo partage (enregistrer) ; généré à la volée paramètres
+
+    }
+    </script>
+</div>

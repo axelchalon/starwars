@@ -1,0 +1,54 @@
+<section class="header" style="background: url('img/{{currentItem.name}}.jpg') center center no-repeat black; background-size: cover;" >
+  <h1>{{currentItem.name}}</h1>
+    <p>{{currentItem.born}} &ndash; {{currentItem.dead}}</p>
+</section>
+
+
+<section class="middle">
+    <div class="corner"><span>{{currentItem.position}}</span></div>
+     
+    <div class="inner">
+       
+        <div class="upper">{{currentItem.biography}}</div>
+        
+        <div class="lower" data-sr="enter left please 2s">
+            <img src="img/planet_rocket.png" alt="" >
+            <p>{{currentItem.planet}}</p>
+        </div>
+        
+        <div class="evenlower">
+            <div data-sr="enter top please 2s">
+                <img src="img/planet_planet.png" alt="">
+                <p>République galactique puis empire.</p>
+            </div>
+            <div data-sr="enter top please 2s">
+                <img src="img/planet_sabers.png" alt="">
+                <p>Chevalier Jedi puis Sith.</p>
+            </div>
+            <div style="clear: both; border-bottom: 1px solid transparent; "></div>
+        </div>
+    </div>
+  
+</section>
+
+<section class="footer">
+   <div class="inner">
+        <div class="upper">
+            <div class="sabre" data-sr="move 20px">
+                <div class="laser"></div><div class="manche"></div>
+            </div>   
+            <h2>Son arme</h2>
+            <p>{{currentItem.weapons}}</p>
+        </div>
+        <div style="clear: both;  border-bottom: 1px solid transparent;"></div>
+
+       
+        <div class="middle">
+           <img src="img/planet_vehicle.png" data-sr="move 20px" alt="Vaisseau">
+            <h2>Ses vaisseaux</h2>
+            <p>{{currentItem.vehicles}}</p>
+        </div>
+        <div style="clear: both;  border-bottom: 1px solid transparent; "></div>
+        
+    </div>
+</section>

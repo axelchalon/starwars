@@ -1,0 +1,249 @@
+<script type="text/javascript">
+    $(document).ready(function() {$('#anchors').localScroll({duration:1000});});
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {$('#targets_anchors').localScroll({duration:1000});});
+</script>
+    <!-- les cibles localscroll -->
+    <div id="targets_anchors">
+        <div id="target_1"></div>
+        <div id="target_2"></div>
+        <a href="#target_3">
+            <img src="img/arrow_down.png" alt="arrow down" class="arrow ad3" data-sr="reset wait 0.42s then enter bottom">
+        </a>
+        <div id="target_3"></div>
+        <a href="#target_4">
+            <img src="img/arrow_down.png" alt="arrow down" class="arrow ad4" data-sr="reset wait 0.42s then enter bottom">
+        </a>
+        <div id="target_4"></div>
+        <a href="#target_5">
+            <img src="img/arrow_down.png" alt="arrow down" class="arrow ad5" data-sr="reset wait 0.42s then enter bottom">
+        </a>
+        <div id="target_5"></div>
+    </div>
+
+    <div class="bg_container">
+        <div class="container1">
+
+        </div>
+        <div class="container2">
+            <div class="color color_c"></div>
+            <div class="color color_d"></div>
+            <!-- BLOC B -->
+            <div class="bloc_b">
+                <!-- 960px -->
+                <div class="inner960">
+                    <div class="center">
+                        <div class="top_text_b">
+                            <h1 class="title_history" data-sr="reset wait 0.15s then enter top">Histoire</h1>
+                        </div>
+                        <div class="container_bloc_history">
+                            <div class="bloc_history" data-sr="reset wait 0.30s then enter top">
+                                <p class="history_text history_text_1">{{currentItem.text1}}</p>
+                                <p class="history_text history_text_2">{{currentItem.text2}}</p>
+                                <p class="history_text history_text_3">{{currentItem.text3}}</p>
+
+                            </div>
+                            <div class="bloc_anchors">
+                                <img src="img/button_on.png" alt="button" class="button button1" id="button1" onclick="chgImg1();" data-sr="reset wait 0.35s then enter bottom">
+                                <img src="img/button_off.png" alt="button" class="button button2" id="button2" onclick="chgImg2();" data-sr="reset wait 0.40s then enter bottom">
+                                <img src="img/button_off.png" alt="button" class="button button3" id="button3" onclick="chgImg3();" data-sr="reset wait 0.45s then enter bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BLOC C -->
+            <div class="bloc_c">
+                <!-- 960px -->
+                <div class="inner960">
+                    <div class="center">
+                        <div class="top_text_c">
+                            <h1 class="title_composition" data-sr='reset wait 0.20s then enter top'>Lieux connus</h1>
+                        </div>
+                        <img src="img/{{currentItem.name}}1.png" alt="lightsaber cut" class="lightsaber_cut" data-sr='reset wait 1.5s then scale up 10%'>
+                        <p class="cut_view" data-sr='reset wait 0.5s then enter top'><em>Tipota City</em></p>
+                        <img src="img/{{currentItem.name}}2.png" alt="lightsaber cut" class="lightsaber_cut" data-sr='reset wait 1.5s then scale up 10%'>
+                        <p class="cut_view" data-sr='reset wait 0.5s then enter top'><em></em></p>
+                    </div>
+                </div>
+            </div>
+            <!-- BLOC D -->
+            <div class="bloc_d">
+                <!-- 960px -->
+                <div class="inner960">
+                    <div class="center">
+                        <div class="top_text_d">
+                            <h1 class="title_operation" data-sr='reset wait 0.15s then enter top'>Environnement</h1>
+                        </div>
+                        <p class="bloc_operation_description" data-sr='reset wait 0.45s then scale up 5%'>{{currentItem.environment}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOC A -->
+    <div class="bloc_a bloc_a_planet">
+        <!-- 960px -->
+        <div class="inner">
+            <div class="top_text_a">
+                <h1 class="main_title">Kamino</h1>
+                <h2 class="second_title" data-sr="reset wait 0.15s then hustle 10%">Planète immergée</h2>
+            </div>
+            <div class="saber_center saber_planet">
+                <div class="container_text_left">
+                    <div class="bloc_text align_left bloc_text_a">
+                        <p class="titles" data-sr="reset wait 0.15s then enter left">Capitale</p>
+                        <div class="separators_left" data-sr="reset wait 0.30s then enter left"></div>
+                        <p class="texts" data-sr="reset wait 0.10s then enter left">{{currentItem.capital}}</p>
+                    </div>
+                    <div class="bloc_text align_left bloc_text_c">
+                        <p class="titles" data-sr="reset wait 0.20s then enter left">Type</p>
+                        <div class="separators_left" data-sr="reset wait 0.30s then enter left"></div>
+                        <p class="texts" data-sr="reset wait 0.40s then enter left">{{currentItem.ptype}}</p>
+                    </div>
+                    <div class="bloc_text align_left bloc_text_e">
+                        <p class="titles" data-sr="reset wait 0.50s then enter left">Gravité</p>
+                        <div class="separators_left" data-sr="reset wait 0.60s then enter left"></div>
+                        <p class="texts" data-sr="reset wait 0.75s then enter left">{{currentItem.gravity}}</p>
+                    </div> 
+                    <div class="bloc_text align_left bloc_text_g">
+                        <p class="titles" data-sr="reset wait 0.15s then enter left">Affiliation</p>
+                        <div class="separators_left" data-sr="reset wait 0.20s then enter left"></div>
+                        <p class="texts" data-sr="reset wait 0.30s then enter left">Nouvelle Republique<br/>Empire Galactique<br/>Kaminoans</p>
+                    </div>
+                    <div class="bloc_text align_left bloc_text_i">
+                        <p class="titles" data-sr="reset wait 0.40s then enter left">Première apparition</p>
+                        <div class="separators_left" data-sr="reset wait 0.55s then enter left"></div>
+                        <p class="texts" data-sr="reset wait 1.1s then enter left">Episode II<br>L'attaque des clones</p>
+                    </div>
+                </div>
+                <div class="container_text_right">
+                    <div class="bloc_text align_right bloc_text_b">
+                        <p class="titles"data-sr="reset wait 0.22s then enter right">Zone Galactique</p>
+                        <div class="separators_right"data-sr="reset wait 0.35s then enter right"></div>
+                        <p class="texts"data-sr="reset wait 0.25s then enter right">{{currentItem.zone}}</p>
+                    </div>
+                    <div class="bloc_text align_right bloc_text_d">
+                        <p class="titles"data-sr="reset wait 0.35s then enter right">Lunes</p>
+                        <div class="separators_right"data-sr="reset wait 0.45s then enter right"></div>
+                        <p class="texts"data-sr="reset wait 0.55s then enter right">{{currentItem.moons}}</p>
+                    </div>
+                    <div class="bloc_text align_right bloc_text_f">
+                        <p class="titles"data-sr="reset wait 0.65s then enter right">Diamètre</p>
+                        <div class="separators_right"data-sr="reset wait 0.70s then enter right"></div>
+                        <p class="texts"data-sr="reset wait 0.85s then enter right">{{currentItem.diameter}}</p>
+                    </div>
+                    <div class="bloc_text align_right bloc_text_h">
+                        <p class="titles" data-sr="reset wait 0.28s then enter right">Population</p>
+                        <div class="separators_right" data-sr="reset wait 0.38s then enter right"></div>
+                        <p class="texts"data-sr="reset wait 0.30s then enter right">Kaminoans<br/>Aiwhas</p>
+                    </div>
+                </div>
+                <div class="container_bloc_anchor_a">
+                    <div class="bloc_anchors_a">
+                        <div class="anchors" id="anchors">
+                            <a href="#target_1">
+                                <img src="img/button_on_a.png" alt="button" style="visibility: hidden !important;" class="buttons button_a" id="button_a" onclick="chgImgA();" data-sr="reset wait 0.35s then enter bottom">
+                            </a>
+                            <a href="#target_2">
+                                <img src="img/button_off.png" alt="button" style="visibility: hidden !important;" class="buttons button_b" id="button_b" onclick="chgImgB();" data-sr="reset wait 0.42s then enter bottom">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer><!-- footer commun --></footer>
+<script type="text/javascript">var btn1 = document.getElementById('button1'),
+    btn2 = document.getElementById('button2'), 
+    btn3 = document.getElementById('button3'),
+    btna = document.getElementById('button_a'),
+    btnb = document.getElementById('button_b');
+
+$('.button1').click(function () {
+	$('.history_text_2').fadeOut(200);
+	$('.history_text_3').fadeOut(200);
+
+	$('.history_text_1').delay(250).fadeIn(200);
+});
+
+$('.button2').click(function () {
+	$('.history_text_1').fadeOut(200);
+	$('.history_text_3').fadeOut(200);
+
+	$('.history_text_2').delay(250).fadeIn(200);
+});
+
+$('.button3').click(function () {
+	$('.history_text_1').fadeOut(200);
+	$('.history_text_2').fadeOut(200);
+
+	$('.history_text_3').delay(250).fadeIn(200);
+});
+
+
+function chgImg1(){
+	btn1.src="img/button_on.png";
+	btn2.src="img/button_off.png";
+	btn3.src="img/button_off.png";
+}
+
+function chgImg2(){
+	btn1.src="img/button_off.png";
+	btn2.src="img/button_on.png";
+	btn3.src="img/button_off.png";
+}
+
+function chgImg3(){
+	btn1.src="img/button_off.png";
+	btn2.src="img/button_off.png";
+	btn3.src="img/button_on.png";
+}
+ /* _______ */
+
+$('.button_a').stop().click(function () {
+	$('.bloc_text_g').fadeOut(200);
+	$('.bloc_text_h').fadeOut(200);
+	$('.bloc_text_i').fadeOut(200);
+	$('.bloc_text_a').delay(250).fadeIn(200);
+	$('.bloc_text_b').delay(250).fadeIn(200);
+	$('.bloc_text_c').delay(250).fadeIn(200);
+	$('.bloc_text_d').delay(250).fadeIn(200);
+	$('.bloc_text_e').delay(250).fadeIn(200);
+	$('.bloc_text_f').delay(250).fadeIn(200);
+
+});
+
+$('.button_b').stop().click(function () {
+	$('.bloc_text_a').fadeOut(200);
+	$('.bloc_text_b').fadeOut(200);
+	$('.bloc_text_c').fadeOut(200);
+	$('.bloc_text_d').fadeOut(200);
+	$('.bloc_text_e').fadeOut(200);
+	$('.bloc_text_f').fadeOut(200);
+	$('.bloc_text_g').delay(250).fadeIn(200);
+	$('.bloc_text_h').delay(250).fadeIn(200);
+	$('.bloc_text_i').delay(250).fadeIn(200);
+});
+
+
+function chgImgA(){
+	btna.src="img/button_on.png";
+	btnb.src="img/button_off.png";
+}
+
+function chgImgB(){
+	btna.src="img/button_off.png";
+	btnb.src="img/button_on.png";
+}
+    
+var pathname = window.location.href.split('#')[0];
+$('a[href^="#"]').each(function() {
+    var $this = $(this),
+        link = $this.attr('href');
+    $this.attr('href', pathname + link);
+});
+</script>
